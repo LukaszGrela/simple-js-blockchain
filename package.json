@@ -20,5 +20,7 @@
     "url": "https://github.com/LukaszGrela/simple-js-blockchain/issues"
   },
   "homepage": "https://github.com/LukaszGrela/simple-js-blockchain#readme",
-  "dependencies": {}
+  "dependencies": {
+    "crypto-js": "^3.1.9-1"
+  }
 }
