@@ -8,10 +8,24 @@ class Block {
         this.previousHash = previousHash;
         this.hash = this.calculateHash();
         this.index = -1;
+
+        /**
+         * Random value property that we have to guess so our mining requirement (X zeros) in front will be met
+         */
+        this.nonce = 0;
     }
 
     calculateHash() {
-        return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
+        return SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data) + this.nonce).toString();
+    }
+
+    mineblock(difficulty) {
+        let start = new Date().getTime();
+        while (this.hash.substring(0, difficulty) !== Array(difficulty + 1).join('0')) {
+            this.nonce++;
+            this.hash = this.calculateHash();
+        }
+        console.log('Block mined: ', this.hash, `${new Date().getTime()-start}ms`);
     }
 
 }
@@ -19,6 +33,7 @@ class Block {
 class BlockChain {
     constructor() {
         this.chain = [this.genesis()];
+        this.difficulty = 2;
     }
 
     genesis() {
@@ -34,8 +49,8 @@ class BlockChain {
     addBlock(newBlock) {
         newBlock.index = this.chain.length;
         newBlock.previousHash = this.getLatestBlock().hash;
-        newBlock.hash = newBlock.calculateHash();
-
+        newBlock.mineblock(this.difficulty);
+       
         this.chain.push(newBlock);
     }
 
