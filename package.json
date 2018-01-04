@@ -20,7 +20,5 @@
     "url": "https://github.com/LukaszGrela/simple-js-blockchain/issues"
   },
   "homepage": "https://github.com/LukaszGrela/simple-js-blockchain#readme",
-  "dependencies": {
-    "js-hash-code": "^1.0.0"
-  }
+  "dependencies": {}
 }
