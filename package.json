@@ -1,0 +1,26 @@
+{
+  "name": "simple-js-blockchain",
+  "version": "0.0.1",
+  "description": "Learning by coding - what is blockchain and how it works - in JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukaszGrela/simple-js-blockchain.git"
+  },
+  "keywords": [
+    "blockchain",
+    "javascript"
+  ],
+  "author": "Lukasz 'Severiaan' Grela",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LukaszGrela/simple-js-blockchain/issues"
+  },
+  "homepage": "https://github.com/LukaszGrela/simple-js-blockchain#readme",
+  "dependencies": {
+    "js-hash-code": "^1.0.0"
+  }
+}
